@@ -402,7 +402,7 @@ const Landing = () => {
             Empowering creators with AI-driven content generation
           </p>
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Content Spark. All rights reserved. • Powered by Gemini AI
+            © {new Date().getFullYear()} Content Spark. All rights reserved. • Powered by Nav-code
           </p>
         </div>
       </footer>
