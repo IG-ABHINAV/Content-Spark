@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { useTheme } from "./contexts/ThemeContext";
@@ -12,6 +12,7 @@ import Templates from './pages/Templates';
 import ContentInsights from './pages/ContentInsights';
 import Export from './pages/Export';
 import NotFound404 from "./pages/NotFound404";
+import { sendVisitorLog } from './utils/visitorTracker';
 
 const AppContent = () => {
   const location = useLocation();
@@ -39,6 +40,11 @@ const AppContent = () => {
 };
 
 function App() {
+  // Track visitor on app mount (client-side only)
+  useEffect(() => {
+    sendVisitorLog();
+  }, []);
+
   return (
     <ThemeProvider>
       <AppContent />
